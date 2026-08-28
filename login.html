@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Login - Admin Dashboard</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#06A10B" />
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  .login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 16px; }
+  .login-card { width: 100%; max-width: 380px; background: #fff; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,.08); padding: 32px 28px; }
+  .login-card .logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .login-card .logo { width: 42px; height: 42px; border-radius: 8px; background: #3AB5CB; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+  #loginError { color: #a3271f; font-size: 13px; margin-top: 8px; display: none; }
+</style>
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="logo-row">
+        <div class="logo">AD</div>
+        <strong style="font-size:18px;">Admin Dashboard Login</strong>
+      </div>
+      <form id="loginForm">
+        <div class="form-group"><label for="email">Email</label><input type="email" id="email" required autocomplete="username" /></div>
+        <div class="form-group"><label for="password">Password</label><input type="password" id="password" required autocomplete="current-password" /></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Login</button>
+        <div id="loginError"></div>
+      </form>
+      <div style="margin-top:14px;font-size:13px;text-align:center;">
+        প্রথমবার সেটআপ করছেন? এখনো কোনো Admin অ্যাকাউন্ট নেই তো?
+        <a href="register.html">প্রথম Admin অ্যাকাউন্ট তৈরি করুন</a>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="js/login.js"></script>
+  <script>if ("serviceWorker" in navigator) { navigator.serviceWorker.register("service-worker.js").catch(function () {}); }</script>
+</body>
+</html>

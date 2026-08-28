@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Reports - Admin Dashboard</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#06A10B" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="header-root"></div>
+  <div id="sidebar-backdrop-root"></div>
+  <div class="app-shell">
+    <div id="sidebar-root"></div>
+    <main class="main-content">
+      <h1 class="page-title">Reports</h1>
+
+      <div class="card">
+        <strong>সামগ্রিক পরিসংখ্যান</strong>
+        <div id="overallStats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:12px;">
+          <div class="placeholder-note">লোড হচ্ছে...</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <strong>পরীক্ষাভিত্তিক ফলাফল সারাংশ</strong>
+        <div style="overflow-x:auto;margin-top:10px;">
+          <table>
+            <thead><tr><th>পরীক্ষা</th><th>প্রকাশিত ফলাফল</th><th>গড় বিষয়সংখ্যা/স্টুডেন্ট</th></tr></thead>
+            <tbody id="examSummaryBody"><tr><td colspan="3" class="placeholder-note">লোড হচ্ছে...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="js/reports.js"></script>
+</body>
+</html>

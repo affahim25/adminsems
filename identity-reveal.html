@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Identity Reveal - Admin Dashboard</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#06A10B" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="header-root"></div>
+  <div id="sidebar-backdrop-root"></div>
+  <div class="app-shell">
+    <div id="sidebar-root"></div>
+    <main class="main-content">
+      <h1 class="page-title">Identity Reveal</h1>
+      <div class="placeholder-note" style="margin-bottom:16px;">
+        এই পোর্টালই একমাত্র জায়গা যেখান থেকে স্ক্রিপ্ট আইডি ↔ স্টুডেন্ট ম্যাপিং দেখা যায়। প্রতিটা lookup
+        স্বয়ংক্রিয়ভাবে Audit Logs-এ রেকর্ড হয়ে যায়।
+      </div>
+
+      <div class="card">
+        <strong>স্ক্রিপ্ট আইডি দিয়ে খুঁজুন</strong>
+        <div class="search-bar" style="margin-top:10px;">
+          <input type="text" id="scriptIdBox" placeholder="যেমন: SCR-AB12CD34" />
+          <button class="btn btn-primary" id="lookupByScriptBtn">খুঁজুন</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <strong>স্টুডেন্ট + পরীক্ষা দিয়ে খুঁজুন</strong>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
+          <input type="text" id="studentIdBox" placeholder="Student ID (UID)" style="flex:1;min-width:180px;padding:9px 12px;border:1px solid var(--border-light);border-radius:4px;" />
+          <input type="text" id="examIdBox" placeholder="Exam ID" style="flex:1;min-width:140px;padding:9px 12px;border:1px solid var(--border-light);border-radius:4px;" />
+          <button class="btn btn-primary" id="lookupByStudentBtn">খুঁজুন</button>
+        </div>
+      </div>
+
+      <div class="card reveal-card" id="resultCard" style="display:none;"></div>
+    </main>
+  </div>
+  <script type="module" src="js/identity-reveal.js"></script>
+</body>
+</html>

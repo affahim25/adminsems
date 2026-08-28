@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Approvals - Admin Dashboard</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#06A10B" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="header-root"></div>
+  <div id="sidebar-backdrop-root"></div>
+  <div class="app-shell">
+    <div id="sidebar-root"></div>
+    <main class="main-content">
+      <h1 class="page-title">Approvals</h1>
+
+      <div class="card">
+        <strong>Result Publish Requests</strong>
+        <div class="placeholder-note" style="margin-top:6px;margin-bottom:10px;">
+          Approve করলে scriptIdentityMap থেকে পরিচয় বের করে results/* এ মার্কস বসানো হবে (তখনও published=false থাকবে)।
+          নিচে আলাদাভাবে পুরো পরীক্ষার ফলাফল প্রকাশ করা যাবে।
+        </div>
+        <div id="publishRequestsArea"><div class="placeholder-note">লোড হচ্ছে...</div></div>
+      </div>
+
+      <div class="card">
+        <strong>পরীক্ষার ফলাফল প্রকাশ করুন</strong>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;align-items:end;">
+          <div class="form-group" style="margin-bottom:0;min-width:220px;">
+            <label for="publishExamSelect">পরীক্ষা</label>
+            <select id="publishExamSelect"></select>
+          </div>
+          <button class="btn btn-primary" id="publishExamBtn">Publish করুন</button>
+        </div>
+        <div id="publishExamMessage" style="margin-top:10px;font-size:13px;"></div>
+      </div>
+
+      <div class="card">
+        <strong>স্টুডেন্ট রিকোয়েস্ট</strong>
+        <div class="tab-buttons" id="requestTabs">
+          <button data-col="specialExamApplications" class="active">Special Exam</button>
+          <button data-col="courseDrops">Course Drop</button>
+          <button data-col="semesterDrops">Semester Drop</button>
+          <button data-col="programChangeRequests">Program Change</button>
+          <button data-col="transportRequests">Transport</button>
+        </div>
+        <div id="requestsArea"><div class="placeholder-note">লোড হচ্ছে...</div></div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="js/approvals.js"></script>
+</body>
+</html>

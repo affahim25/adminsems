@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Accounts - Admin Dashboard</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#06A10B" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="header-root"></div>
+  <div id="sidebar-backdrop-root"></div>
+  <div class="app-shell">
+    <div id="sidebar-root"></div>
+    <main class="main-content">
+      <h1 class="page-title">Accounts (Full Management)</h1>
+
+      <div class="tab-buttons" id="roleTabs">
+        <button data-role="students" class="active">Students</button>
+        <button data-role="teachers">Teachers</button>
+        <button data-role="examCommittee">Exam Committee</button>
+        <button data-role="admins">Admins</button>
+      </div>
+
+      <div class="card">
+        <strong id="createTitle">নতুন Student যোগ করুন</strong>
+        <div class="placeholder-note" style="margin-top:6px;margin-bottom:10px;">
+          Login (Firebase Auth) + role permission + প্রোফাইল ডকুমেন্ট — তিনটাই একসাথে একটা Cloud Function
+          (<code>createPortalUser</code>) দিয়ে তৈরি হয়, যাতে নিজের admin সেশন থেকে লগ-আউট না হয়ে যায়।
+        </div>
+        <form id="createForm">
+          <div class="form-group"><label>নাম</label><input id="c-name" required /></div>
+          <div class="form-group"><label>Email</label><input id="c-email" type="email" required /></div>
+          <div class="form-group"><label>সাময়িক Password</label><input id="c-password" type="text" required minlength="6" /></div>
+          <div id="extraFields"></div>
+          <button type="submit" class="btn btn-primary">তৈরি করুন</button>
+          <div id="createMessage" style="margin-top:10px;font-size:13px;"></div>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="search-bar"><input type="text" id="searchBox" placeholder="নাম বা ইমেইল দিয়ে খুঁজুন..." /></div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead id="listHead"></thead>
+            <tbody id="listBody"><tr><td class="placeholder-note">লোড হচ্ছে...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" id="editCard" style="display:none;max-width:520px;">
+        <strong>Edit</strong>
+        <form id="editForm" style="margin-top:12px;">
+          <input type="hidden" id="e-id" />
+          <div id="editFields"></div>
+          <div style="display:flex;gap:10px;margin-top:10px;">
+            <button type="submit" class="btn btn-primary">সংরক্ষণ করুন</button>
+            <button type="button" class="btn btn-secondary" id="cancelEditBtn">বাতিল</button>
+            <button type="button" class="btn" id="deleteBtn" style="background:#fbe1df;color:#a3271f;margin-left:auto;">ডকুমেন্ট মুছুন</button>
+          </div>
+          <div id="editMessage" style="margin-top:10px;font-size:13px;"></div>
+        </form>
+        <div class="placeholder-note" style="margin-top:10px;">
+          এখান থেকে শুধু Firestore প্রোফাইল ডকুমেন্ট মোছা হয় — সংশ্লিষ্ট Firebase Auth লগইন মুছতে
+          Firebase Console থেকে ম্যানুয়ালি করতে হবে (client SDK নিজের অ্যাকাউন্ট ছাড়া অন্য কারও Auth লগইন মুছতে পারে না)।
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="js/accounts.js"></script>
+</body>
+</html>
