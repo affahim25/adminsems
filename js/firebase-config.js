@@ -88,15 +88,15 @@ import {
 
 /* Same project as the other three portals — replace with the real keys
    before deploying. Must match exactly. */
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCt9vj_QEVbLDwQ8ET2EzCSQZSNk4K61_w",
-  authDomain: "sems-a6241.firebaseapp.com",
-  databaseURL: "https://sems-a6241-default-rtdb.firebaseio.com",
-  projectId: "sems-a6241",
-  storageBucket: "sems-a6241.firebasestorage.app",
-  messagingSenderId: "866951977088",
-  appId: "1:866951977088:web:56fe02377ec140f2372e65",
-  measurementId: "G-FWYSZY6Z7V"
+  apiKey: "AIzaSyDNFcGBqeTCgMFFwHP7Em6NHym8SAxKTjg",
+  authDomain: "annsms.firebaseapp.com",
+  projectId: "annsms",
+  storageBucket: "annsms.firebasestorage.app",
+  messagingSenderId: "536095253963",
+  appId: "1:536095253963:web:4480afca40aea36935824e",
+  measurementId: "G-F1MHT5GCJ6"
 };
 
 const app = initializeApp(firebaseConfig);
